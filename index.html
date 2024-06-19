@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaz & Meli's Space</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="loginSection">
+            <h2>Login</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password">
+            </div>
+            <button onclick="login()">Login</button>
+            <div class="error hidden" id="errorMessage">Invalid username or password</div>
+        </div>
+
+        <div id="contentSection" class="hidden">
+            <h1>Welcome, <span id="user"></span>! 🌸</h1>
+
+            <!-- Timer -->
+            <div class="section">
+                <h2>We've been together for:</h2>
+                <p id="timer">💖</p>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="section">
+                <button class="toggle-button" onclick="toggleSection('photoGallerySection')">📸 Photo Gallery</button>
+                <div id="photoGallerySection" class="hidden">
+                    <input type="file" id="photoUpload" accept="image/*" class="upload-btn">
+                    <button onclick="uploadPhoto()">Upload Photo</button>
+                    <div id="photoGallery" class="gallery">
+                        <!-- Uploaded photos will appear here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Love Notes -->
+            <div class="section">
+                <button class="toggle-button" onclick="toggleSection('loveNotesSection')">💌 Love Notes</button>
+                <div id="loveNotesSection" class="hidden">
+                    <div id="loveNotes" class="love-notes"></div>
+                    <textarea id="newLoveNote" placeholder="Write a new love note..."></textarea>
+                    <button onclick="addLoveNote()">Add Love Note</button>
+                </div>
+            </div>
+
+            <!-- Shared Calendar -->
+            <div class="section">
+                <button class="toggle-button" onclick="toggleSection('calendarSection')">📅 Shared Calendar</button>
+                <div id="calendarSection" class="hidden">
+                    <!-- Calendar functionality -->
+                </div>
+            </div>
+
+            <!-- Bucket List -->
+            <div class="section">
+                <button class="toggle-button" onclick="toggleSection('bucketListSection')">📝 Bucket List</button>
+                <div id="bucketListSection" class="hidden">
+                    <ul id="bucketList">
+                        <!-- Bucket list items -->
+                    </ul>
+                    <input type="text" id="newBucketItem" placeholder="Add a new item...">
+                    <button onclick="addBucketItem()">Add</button>
+                </div>
+            </div>
+
+            <!-- Favorite Memories -->
+            <div class="section">
+                <button class="toggle-button" onclick="toggleSection('memoriesSection')">📸 Favorite Memories</button>
+                <div id="memoriesSection" class="hidden">
+                    <div id="memories">
+                        <!-- Favorite memories -->
+                    </div>
+                    <textarea id="newMemory" placeholder="Add a new memory..."></textarea>
+                    <button onclick="addMemory()">Add Memory</button>
+                </div>
+            </div>
+
+            <!-- Playlists -->
+            <div class="section">
+                <button class="toggle-button" onclick="toggleSection('playlistsSection')">🎵 Playlists</button>
+                <div id="playlistsSection" class="hidden">
+                    <div id="playlists">
+                        <!-- Playlists will be dynamically added here -->
+                    </div>
+                    <input type="text" id="newPlaylistName" placeholder="Playlist Name">
+                    <textarea id="newPlaylistCode" placeholder="Paste your Spotify playlist embed code..."></textarea>
+                    <button onclick="addPlaylist()">Add Playlist</button>
+                </div>
+            </div>
+
+            <!-- Private Journal -->
+            <div class="section">
+                <button class="toggle-button" onclick="toggleSection('journalSection')">📔 Private Journal</button>
+                <div id="journalSection" class="hidden">
+                    <div id="journal" class="journal">
+                        <!-- Journal entries -->
+                    </div>
+                    <textarea id="newJournalEntry" placeholder="Write a new journal entry..."></textarea>
+                    <button onclick="addJournalEntry()">Add Journal Entry</button>
+                </div>
+            </div>
+
+            <!-- Recipes -->
+            <div class="section">
+                <button class="toggle-button" onclick="toggleSection('recipesSection')">🍲 Recipes</button>
+                <div id="recipesSection" class="hidden">
+                    <div id="recipes" class="recipes">
+                        <!-- Recipes -->
+                    </div>
+                    <textarea id="newRecipe" placeholder="Add a new recipe..."></textarea>
+                    <button onclick="addRecipe()">Add Recipe</button>
+                </div>
+            </div>
+
+            <!-- Dream Board -->
+            <div class="section">
+                <button class="toggle-button" onclick="toggleSection('dreamBoardSection')">🌈 Dream Board</button>
+                <div id="dreamBoardSection" class="hidden">
+                    <div id="dreamBoard" class="dream-board">
+                        <!-- Dreams -->
+                    </div>
+                    <textarea id="newDream" placeholder="Add a new dream..."></textarea>
+                    <button onclick="addDream()">Add Dream</button>
+                </div>
+            </div>
+
+            <!-- Messages -->
+            <div class="section">
+                <button class="toggle-button" onclick="toggleSection('messagesSection')">💬 Messages</button>
+                <div id="messagesSection" class="hidden">
+                    <div id="messages" class="messages">
+                        <!-- Messages -->
+                    </div>
+                    <textarea id="newMessage" placeholder="Leave a message..."></textarea>
+                    <button onclick="addMessage()">Send Message</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
